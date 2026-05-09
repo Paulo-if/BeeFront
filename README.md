@@ -31,5 +31,4 @@ O aprendizado é dividido em etapas lógicas e fundamentais:
 11. **🚀 Deploy + Ferramentas** — Fechamento prático e publicação.
 
 ---
----
 Desenvolvido por [Paulo Otávio](https://github.com/Paulo-if)
