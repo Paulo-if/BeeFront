@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Define o tipo do documento como HTML5 -->
+<html lang="pt-br">
+<!-- lang="pt-br" informa ao navegador e leitores de tela que o idioma da página é português do Brasil -->
+
+<head>
+    <!-- ===================== FONTES ===================== -->
+    <!-- As duas linhas abaixo criam uma conexão antecipada com os servidores do Google Fonts,
+         isso acelera o carregamento da fonte, pois o navegador já começa a "conversar" com o servidor antes de precisar do arquivo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Carrega a fonte Inter (estilo normal) do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap" rel="stylesheet">
+
+    <!-- Carrega a fonte Inter com peso 500 (um pouco mais grossa que o normal) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap" rel="stylesheet">
+
+    <!-- ===================== META TAGS ===================== -->
+    <!-- Define o conjunto de caracteres como UTF-8, permitindo acentos, ç, emojis etc. -->
+    <meta charset="UTF-8">
+
+    <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Responsividade: faz a página se adaptar à largura do dispositivo (celular, tablet, etc.)
+         sem essa linha, em celulares a página apareceria miniaturizada -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projeto01</title>
+
+    <!-- Conecta este HTML ao arquivo de estilos CSS.
+         Troque "style.css" pelo nome do seu arquivo caso ele tenha outro nome -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===================== CONTAINER PRINCIPAL ===================== -->
+    <!-- Div que envolve todo o conteúdo da página.
+         Div é uma caixa genérica — o navegador não aplica nenhum estilo visual a ela por padrão.
+         O id="container" permite estilizá-la pelo CSS -->
+    <div id="container">
+
+        <!-- ===== SEÇÃO DE PERFIL (foto + nome de usuário) ===== -->
+        <div id="profile">
+            <!-- Foto de perfil. O atributo alt descreve a imagem para leitores de tela e
+                 aparece como texto caso a imagem não carregue -->
+            <img src="./assets/avatar.png" alt="Foto de Perfil">
+
+            <!-- Nome de usuário exibido abaixo da foto -->
+            <p>@otaviopaul0</p>
+        </div>
+
+        <!-- ===== LISTA DE LINKS (versão texto) ===== -->
+        <!-- ul = lista não ordenada (sem números ou marcadores visíveis)
+             Cada li é um item da lista, e dentro dele há um link <a> -->
+        <ul>
+            <li>
+                <!-- target="_blank" faz o link abrir em uma nova aba do navegador -->
+                <a href="https://www.linkedin.com/in/paulootavi0/" target="_blank">LinkedIn</a>
+            </li>
+
+            <li>
+                <a href="https://github.com/Paulo-if" target="_blank">GitHub</a>
+            </li>
+
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </li>
+        </ul>
+
+        <!-- ===== ÍCONES DE REDES SOCIAIS ===== -->
+        <!-- Versão com ícones visuais das mesmas redes sociais da lista acima.
+             Os ícones vêm da biblioteca Ionicons, carregada no final do body -->
+        <div id="social-links">
+            <a href="https://www.linkedin.com/in/paulootavi0/" target="_blank">
+                <!-- ion-icon é um componente da biblioteca Ionicons.
+                     O atributo name define qual ícone será exibido -->
+                <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+            <a href="https://github.com/Paulo-if" target="_blank">
+                <ion-icon name="logo-github"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+        </div>
+
+    </div><!-- fim #container -->
+
+    <!-- ===================== BIBLIOTECA IONICONS ===================== -->
+    <!-- Carrega a biblioteca de ícones Ionicons via CDN (internet).
+         A versão "module" é para navegadores modernos; a "nomodule" é o fallback para navegadores antigos -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

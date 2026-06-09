@@ -1,0 +1,211 @@
+/* =====================================================
+   RESET GLOBAL
+   O * seleciona TODOS os elementos da página de uma vez.
+   Por padrão, navegadores adicionam margens e espaçamentos
+   próprios em vários elementos — isso remove esses padrões
+   para que o layout seja consistente em qualquer navegador.
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+
+    /* box-sizing: border-box faz com que padding e border sejam
+       contados DENTRO da largura/altura do elemento.
+       Sem isso, adicionar padding aumentaria o tamanho total da caixa,
+       quebrando o layout. */
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FUNDO DA PÁGINA
+===================================================== */
+body {
+    /* Imagem de fundo:
+       - no-repeat: não repete a imagem
+       - top center: ancora a imagem no topo, centralizada horizontalmente
+       - /cover: redimensiona a imagem para cobrir toda a tela, sem distorcer */
+    background: url(./assets/bg-mobile.jpg) no-repeat top center / cover;
+}
+
+
+/* =====================================================
+   CONTAINER PRINCIPAL
+   Caixa central que limita a largura do conteúdo e
+   o mantém centralizado na tela.
+===================================================== */
+#container {
+    width: 360px;
+
+    /* margin: 56px auto 0px
+       - 56px de espaço acima (afasta do topo da tela)
+       - auto nas laterais: centraliza horizontalmente na tela
+       - 0px abaixo */
+    margin: 56px auto 0px;
+
+    /* Espaçamento interno nas laterais para o conteúdo não
+       ficar "colado" nas bordas do container */
+    padding: 0 24px;
+}
+
+
+/* =====================================================
+   FOTO DE PERFIL
+===================================================== */
+#profile img {
+    /* display: block é necessário para que margin: auto funcione
+       em imagens, já que imagens são inline por padrão */
+    display: block;
+
+    /* Transforma a imagem em círculo (50% de border-radius
+       em um elemento quadrado = círculo perfeito) */
+    border-radius: 50%;
+
+    margin: auto;
+    width: 112px;
+
+    /* Espaço entre o topo do perfil e a foto */
+    margin-top: 24px;
+}
+
+
+/* =====================================================
+   SEÇÃO DE PERFIL (foto + nome de usuário)
+===================================================== */
+#profile {
+    /* Centraliza texto e imagem horizontalmente */
+    text-align: center;
+
+    /* 24px de espaçamento interno em todos os lados (cima, baixo, esquerda, direita) */
+    padding: 24px;
+}
+
+
+/* =====================================================
+   FONTE GLOBAL
+   Aplica a fonte Inter a todos os elementos dentro do body.
+   O sans-serif no final é o "fallback": se a Inter não carregar,
+   o navegador usará qualquer fonte sem serifa disponível no sistema.
+===================================================== */
+body * {
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+
+/* =====================================================
+   NOME DE USUÁRIO (@handle)
+===================================================== */
+#profile p {
+    font-weight: 400;      /* Peso normal da fonte */
+    font-size: 16px;       /* Tamanho padrão dos navegadores, definido explicitamente para garantir consistência */
+    line-height: 24px;     /* Altura da linha — controla o espaço vertical entre linhas de texto */
+    margin-top: 8px;       /* Espaço entre a foto e o nome */
+}
+
+
+/* =====================================================
+   LISTA DE LINKS
+   Estiliza o <ul> que contém os botões de navegação.
+===================================================== */
+ul {
+    /* Remove os marcadores (bolinhas) padrão de listas */
+    list-style: none;
+
+    /* Flexbox em coluna: empilha os itens verticalmente */
+    display: flex;
+    flex-direction: column;
+
+    /* Espaço de 16px entre cada item da lista */
+    gap: 16px;
+
+    /* Espaçamento interno vertical (cima e baixo), sem espaço lateral */
+    padding: 24px 0;
+}
+
+
+/* =====================================================
+   BOTÕES DE LINK (cada <a> dentro de <li>)
+===================================================== */
+ul li a {
+    /* display: flex permite usar justify-content e align-items
+       para centralizar o texto dentro do botão */
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+
+    padding: 16px 24px;       /* Espaço interno: 16px vertical, 24px horizontal */
+
+    /* Fundo branco com 10% de opacidade — cria o efeito de "vidro fosco"
+       RGBA = Red, Green, Blue, Alpha (transparência: 0 = invisível, 1 = sólido) */
+    background: rgba(255, 255, 255, 0.1);
+
+    /* Arredonda os cantos do botão */
+    border-radius: 8px;
+
+    /* Desfoque do que está atrás do elemento — parte do efeito glassmorphism
+       (verifique suporte em caniuse.com antes de usar em produção) */
+    backdrop-filter: blur(4px);
+
+    /* Remove o sublinhado padrão dos links */
+    text-decoration: none;
+
+    font-weight: 500;
+
+    /* Anima suavemente a mudança de cor do fundo em 0.2 segundos
+       ao passar o mouse (ver regra :hover abaixo) */
+    transition: background 0.2s;
+}
+
+
+/* =====================================================
+   HOVER DOS BOTÕES DE LINK
+   Pseudo-seletor :hover — aplicado quando o mouse
+   está sobre o elemento. Cria o efeito de interação visual.
+===================================================== */
+ul li a:hover {
+    /* Fundo ainda mais transparente para indicar foco */
+    background: rgba(255, 255, 255, 0.05);
+
+    /* Borda branca fina aparece ao passar o mouse */
+    border: 1.5px solid white;
+}
+
+
+/* =====================================================
+   SEÇÃO DE ÍCONES SOCIAIS
+   Linha horizontal com os ícones das redes sociais.
+===================================================== */
+#social-links {
+    display: flex;              /* Alinha os ícones lado a lado */
+    padding: 24px 0;
+    font-size: 24px;            /* Tamanho dos ícones (herdado pelo ion-icon) */
+    justify-content: center;    /* Centraliza os ícones horizontalmente */
+}
+
+
+/* =====================================================
+   CADA LINK DE ÍCONE
+===================================================== */
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px;              /* Área clicável ao redor do ícone */
+
+    /* Mesma transição suave do fundo usada nos botões de link */
+    transition: background 0.2s;
+
+    /* border-radius: 50% transforma o fundo em círculo ao passar o mouse */
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   HOVER DOS ÍCONES SOCIAIS
+===================================================== */
+#social-links a:hover {
+    /* Fundo circular semitransparente aparece ao passar o mouse */
+    background: rgba(255, 255, 255, 0.2);
+}
