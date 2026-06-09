@@ -172,6 +172,33 @@ ul li a:hover {
 }
 
 
+/* 
+    ╔══════════════════════════════════════════════════════╗
+    ║              AULA DO DIA: 09/06/2026                 ║
+    ╚══════════════════════════════════════════════════════╝
+
+    ESTILIZANDO OS ÍCONES DE REDES SOCIAIS
+    ────────────────────────────────────────
+    O tamanho do ícone (ion-icon) é controlado pela propriedade
+    font-size no elemento pai (#social-links). Isso funciona porque
+    o Ionicons usa a unidade "em" internamente, herdando o tamanho
+    da fonte do elemento pai.
+
+    EFEITO DE CÍRCULO NO HOVER:
+    Cada <a> tem border-radius: 50%, o que transforma o fundo
+    em um círculo perfeito quando o mouse passa por cima.
+    Para isso funcionar visualmente, o <a> precisa ter:
+      - display: flex        → ativa o modelo flexbox
+      - padding              → cria a área ao redor do ícone
+      - border-radius: 50%   → arredonda até virar círculo
+    Sem o padding, o círculo ficaria colado no ícone.
+
+    RESUMO DAS PROPRIEDADES:
+    #social-links          → alinha os ícones lado a lado (flex) e centraliza
+    #social-links a        → define o tamanho clicável e a animação de fundo
+    #social-links a:hover  → mostra o círculo semitransparente ao passar o mouse
+*/
+
 /* =====================================================
    SEÇÃO DE ÍCONES SOCIAIS
    Linha horizontal com os ícones das redes sociais.
